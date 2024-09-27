@@ -89,7 +89,7 @@ function createStore(injected) {
       panels: {},
       cameraViewPoints: {},
       mostRecentViewPoint: null,
-      collapseDatasetPanels: false,
+      collapseDatasetPanels: true,
       suppressBrowserWarning: false,
     },
     getters: {
