@@ -25,7 +25,7 @@
         {{ getSourceName(sourceId) }}
       </div>
       <v-spacer />
-      <v-tooltip v-if="datasets.length > 1" bottom>
+      <!-- <v-tooltip v-if="datasets.length > 1" bottom>
         <span class="pv-no-select">Activate source</span>
         <template v-slot:activator="{ on }">
           <v-btn
@@ -40,8 +40,8 @@
               'mdi-bookmark-outline' }}
             </v-icon>
           </v-btn>
-        </template>
-      </v-tooltip>
+        </template> -->
+      <!-- </v-tooltip> -->
       <div v-on:click.stop>
         <!-- prevent panel expansion on menu click -->
         <v-menu offset-x>
