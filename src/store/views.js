@@ -30,7 +30,7 @@ export default ({ proxyManager }) => ({
     viewTypeToId: {}, // viewType -> view ID
     backgroundColors: {}, // viewType -> bg
     globalBackgroundColor: DEFAULT_BACKGROUND,
-    axisType: 'arrow',
+    axisType: 'cube',
     axisPreset: DEFAULT_AXIS_PRESET,
     axisVisible: true,
     annotationOpacity: 1,
