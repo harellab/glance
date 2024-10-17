@@ -62,7 +62,6 @@ export default {
       errors: [],
       globalSingleNotification: '',
       notifyPermanent: false,
-      fileName: '',
     };
   },
   computed: {
@@ -93,7 +92,7 @@ export default {
       glanceFileName() {
         // return the name of the glance file loaded by URL
         const params = vtkURLExtract.extractURLParameters();
-        const name = params[0];
+        const { name } = params;
         return name;
       },
     }),
@@ -113,7 +112,6 @@ export default {
     this.internalControlsDrawer = !this.smallScreen;
   },
   mounted() {
-    this.fileName = this.glanceFileName();
     this.$root.$on('open_girder_panel', () => {
       this.fileUploadDialog = true;
     });
