@@ -141,6 +141,7 @@ export default ({ proxyManager }) => ({
           );
 
           view.setPresetToOrientationAxes('default');
+          view.setOrientationAxesType('cube');
 
           if (!view.getReferenceByName('widgetManager')) {
             const widgetManager = vtkWidgetManager.newInstance();
