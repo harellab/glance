@@ -139,7 +139,6 @@ export function createViewer(container, proxyConfig = null) {
         });
 
       const { name, url } = params;
-      export const name; //make the remote file name available globally
       if (name && url) {
         const names = typeof name === 'string' ? [name] : name;
         const urls = typeof url === 'string' ? [url] : url;
