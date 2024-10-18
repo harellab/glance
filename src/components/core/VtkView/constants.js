@@ -2,6 +2,8 @@ export const DEFAULT_VIEW_TYPE = 'View3D:default';
 
 export const DEFAULT_AXIS_PRESET = 'default';
 
+export const DEFAULT_AXIS_TYPE = 'cube';
+
 export const VIEW_TYPE_VALUES = {
   default: 'View3D:default',
   x: 'View2D_X:x',

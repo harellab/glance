@@ -8,6 +8,7 @@ import { mat3 } from 'gl-matrix';
 import {
   DEFAULT_VIEW_TYPE,
   DEFAULT_AXIS_PRESET,
+  DEFAULT_AXIS_TYPE,
   VIEW_TYPE_VALUES,
   DEFAULT_VIEW_TYPES,
   DEFAULT_LPS_VIEW_TYPES,
@@ -30,7 +31,7 @@ export default ({ proxyManager }) => ({
     viewTypeToId: {}, // viewType -> view ID
     backgroundColors: {}, // viewType -> bg
     globalBackgroundColor: DEFAULT_BACKGROUND,
-    axisType: 'arrow',
+    axisType: DEFAULT_AXIS_TYPE,
     axisPreset: DEFAULT_AXIS_PRESET,
     axisVisible: true,
     annotationOpacity: 1,
@@ -140,7 +141,8 @@ export default ({ proxyManager }) => ({
             state.globalBackgroundColor
           );
 
-          view.setPresetToOrientationAxes('default');
+          view.setPresetToOrientationAxes(DEFAULT_AXIS_PRESET);
+          view.setOrientationAxesType(DEFAULT_AXIS_TYPE);
 
           if (!view.getReferenceByName('widgetManager')) {
             const widgetManager = vtkWidgetManager.newInstance();

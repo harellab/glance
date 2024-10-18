@@ -19,6 +19,8 @@ import CollapsibleToolbarItem from 'paraview-glance/src/components/widgets/Colla
 
 import shortcuts from 'paraview-glance/src/shortcuts';
 
+import vtkURLExtract from '@kitware/vtk.js/Common/Core/URLExtract';
+
 // ----------------------------------------------------------------------------
 // Component API
 // ----------------------------------------------------------------------------
@@ -86,6 +88,12 @@ export default {
       },
       dialogType() {
         return this.smallScreen ? 'v-bottom-sheet' : 'v-dialog';
+      },
+      glanceFileName() {
+        // return the name of the glance file loaded by URL
+        const params = vtkURLExtract.extractURLParameters();
+        const { name } = params;
+        return name;
       },
     }),
     ...mapGetters('files', {
