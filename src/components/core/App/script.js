@@ -95,13 +95,13 @@ export default {
         const { name } = params;
         return name ? name.replace(/\.[^/.]+$/, '') : '';
       },
-        }),
-        ...mapGetters('files', {
+    }),
+    ...mapGetters('files', {
       anyFileLoadingErrors: 'anyErrors',
       fileLoadingProgress: 'totalProgress',
-        }),
-      },
-      proxyManagerHooks: {
+    }),
+  },
+  proxyManagerHooks: {
     onProxyModified() {
       if (!this.loadingState) {
         this.$proxyManager.autoAnimateViews();
