@@ -90,18 +90,18 @@ export default {
         return this.smallScreen ? 'v-bottom-sheet' : 'v-dialog';
       },
       glanceFileName() {
-        // return the name of the glance file loaded by URL
+        // return the name of the glance file loaded by URL without the extension
         const params = vtkURLExtract.extractURLParameters();
         const { name } = params;
-        return name;
+        return name ? name.replace(/\.[^/.]+$/, '') : '';
       },
-    }),
-    ...mapGetters('files', {
+        }),
+        ...mapGetters('files', {
       anyFileLoadingErrors: 'anyErrors',
       fileLoadingProgress: 'totalProgress',
-    }),
-  },
-  proxyManagerHooks: {
+        }),
+      },
+      proxyManagerHooks: {
     onProxyModified() {
       if (!this.loadingState) {
         this.$proxyManager.autoAnimateViews();
